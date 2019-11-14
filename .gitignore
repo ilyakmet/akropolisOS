@@ -81,3 +81,5 @@ bin/*
 build/*
 artifacts/*
 coverage.json
+
+package-lock.json
