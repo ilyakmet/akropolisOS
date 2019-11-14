@@ -47,6 +47,7 @@ contract("Pool", async ([_, owner,  wallet1, wallet2, wallet3, wallet4, wallet5]
 
         (
             await pool.isConstant(input._name) && 
+            (await pool.size()).toNumber() === 1 && 
             await pool.getName(wallet5) === 'Node1' &&
             await pool.get(input._name) === wallet5
         )
@@ -67,6 +68,7 @@ contract("Pool", async ([_, owner,  wallet1, wallet2, wallet3, wallet4, wallet5]
 
         (
             !await pool.isConstant(input._name) && 
+            (await pool.size()).toNumber() === 0 && 
             await pool.getName(wallet5) === '' &&
             await pool.get(input._name) === '0x0000000000000000000000000000000000000000'
         )
