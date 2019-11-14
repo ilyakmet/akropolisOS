@@ -11,9 +11,11 @@ before_install: # if "install" is overridden
 #   yarn: true
 
 install:
- - yarn
- - yarn global add solhint
- - yarn global add codecov
+#  - yarn
+#  - yarn global add solhint
+#  - yarn global add codecov  
+  - npm i -g solhint
+  - npm i -g codecov
  
 # notifications:
   # email: true
@@ -23,7 +25,9 @@ node_js:
   - '10.15.3'
 
 script: 
-    yarn lint && yarn coverage && yarn test-gas
+    # yarn lint && yarn coverage && yarn test-gas
+    npm run lint
+    npm run coverage
 
 after_success:
   # - cat coverage/lcov.info | npx coveralls
