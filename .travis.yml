@@ -28,6 +28,7 @@ script:
     # yarn lint && yarn coverage && yarn test-gas
     npm run lint
     npm run coverage
+    npm run test-gas
 
 after_success:
   # - cat coverage/lcov.info | npx coveralls
