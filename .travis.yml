@@ -13,16 +13,19 @@ cash:
 install:
  - yarn
  - yarn global add solhint
+ - npm install -g codecov
  
-notifications:
-  email: true
-  slack: akropolisio:q9lFKpyTHVdsNQ8JD3sA6VQP
+# notifications:
+  # email: true
+  # slack: akropolisio:q9lFKpyTHVdsNQ8JD3sA6VQP
 
 node_js:
   - '10.15.3'
 
 script: 
-    yarn lint && yarn coverage && yarn test-gas
+    # yarn lint && yarn coverage && yarn test-gas
+    - npm run coverage
+    - codecov
 
-after_success:
-  #- cat coverage/lcov.info | npx coveralls
+# after_success:
+  # - cat coverage/lcov.info | npx coveralls
