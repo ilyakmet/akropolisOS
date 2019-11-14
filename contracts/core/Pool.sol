@@ -76,6 +76,9 @@ contract Pool is Base, CoreInterface {
 
         // Remove module
         modules.remove(_name);
+
+        // Register constant flag 
+        is_constant[keccak256(abi.encodePacked(_name))] = false;
     }
 
     /**

@@ -1,5 +1,3 @@
-import Web3Utils from 'web3-utils';
-
 import { PoolContract, PoolInstance} from "../types/truffle-contracts/index";
 // tslint:disable-next-line:no-var-requires
 const { BN, constants, expectEvent, shouldFail } = require("@openzeppelin/test-helpers");
@@ -11,7 +9,7 @@ const Pool = artifacts.require("Pool");
 contract("Pool", async ([_, owner,  wallet1, wallet2, wallet3, wallet4, wallet5]) => {
     let pool: PoolInstance;
   
-    beforeEach(async () => {
+    before(async () => {
         pool = await Pool.new();
         await pool.initialize(owner, {from: owner});
         const address = await pool.owner();
@@ -49,7 +47,28 @@ contract("Pool", async ([_, owner,  wallet1, wallet2, wallet3, wallet4, wallet5]
 
         (
             await pool.isConstant(input._name) && 
+            await pool.getName(wallet5) === 'Node1' &&
             await pool.get(input._name) === wallet5
+        )
+        .should.equal(true);
+    });
+
+    it("should remove module by name", async () => {
+        const input = {
+            _name: 'Node1',
+        };
+
+        await pool.remove(
+            input._name,
+            { 
+                from: owner,
+            }
+        );
+
+        (
+            !await pool.isConstant(input._name) && 
+            await pool.getName(wallet5) === '' &&
+            await pool.get(input._name) === '0x0000000000000000000000000000000000000000'
         )
         .should.equal(true);
     });
