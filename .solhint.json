@@ -1,7 +1,6 @@
 {
     "extends": "solhint:default",
     "rules": {
-        "prettier/prettier": "error",
         "avoid-low-level-calls": "off",
         "avoid-tx-origin": "warn",
         "bracket-align": "off",
@@ -18,6 +17,5 @@
         "separate-by-one-line-in-contract": "error",
         "space-after-comma": "error",
         "statement-indent": "error"
-    },
-    "plugins": ["prettier"]
+    }
 }
