@@ -36,9 +36,9 @@ contract Pool is Base, CoreInterface {
         description = _description;
     }
 
-    // function test() public {
+    function test() public {
 
-    // }
+    }
     
     /**
      * @dev Set new module for given name
@@ -47,7 +47,7 @@ contract Pool is Base, CoreInterface {
      * @param _constant have a `true` value when you create permanent name of module
      */
     function set(string memory _name, address _module, bool _constant) public onlyOwner {
-
+        
         require(!isConstant(_name), "is not module name");
 
         // Notify

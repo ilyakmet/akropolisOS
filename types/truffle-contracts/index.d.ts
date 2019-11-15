@@ -2,7 +2,7 @@
 /* tslint:disable */
 
 /// <reference types="truffle-typings" />
-import { BigNumber } from "bignumber.js";
+import {BigNumber} from "bignumber.js";
 
 export interface AccountsModuleContract
   extends Truffle.Contract<AccountsModuleInstance> {
