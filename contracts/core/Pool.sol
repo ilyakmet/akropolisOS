@@ -46,9 +46,12 @@ contract Pool is Base, CoreInterface {
         
         require(!isConstant(_name), "is not module name");
 
+        // Get module address by name
+        address moduleAddress = modules.get(_name);
+
         // Notify
-        if (modules.get(_name) != ZERO_ADDRESS)
-            emit ModuleReplaced(modules.get(_name), _module);
+        if (moduleAddress != ZERO_ADDRESS)
+            emit ModuleReplaced(moduleAddress, _module);
         else
             emit ModuleAdded(_module);
  
