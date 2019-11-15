@@ -10,6 +10,7 @@
         "test-gas": "GAS_REPORTER=true yarn test && npx codechecks",
         "tsc": "tsc --noEmit",
         "lint": "solhint -c .solhint.json contracts/**/*.sol",
+        "prettier:solidity": "npx prettier --write contracts/**/*.sol",
         "analyze": "npx truffle run verify",
         "coverage": "npx truffle run coverage",
         "deploy": "scripts/deploy.sh"

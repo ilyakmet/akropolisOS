@@ -235,15 +235,6 @@ export interface CompoundModuleInstance extends Truffle.ContractInstance {
 export interface ContextInstance extends Truffle.ContractInstance {}
 
 export interface CoreInterfaceInstance extends Truffle.ContractInstance {
-  test: {
-    (txDetails?: Truffle.TransactionDetails): Promise<
-      Truffle.TransactionResponse
-    >;
-    call(txDetails?: Truffle.TransactionDetails): Promise<void>;
-    sendTransaction(txDetails?: Truffle.TransactionDetails): Promise<string>;
-    estimateGas(txDetails?: Truffle.TransactionDetails): Promise<number>;
-  };
-
   set: {
     (
       _name: string,
@@ -795,15 +786,6 @@ export interface PoolInstance extends Truffle.ContractInstance {
       _description: string,
       txDetails?: Truffle.TransactionDetails
     ): Promise<number>;
-  };
-
-  test: {
-    (txDetails?: Truffle.TransactionDetails): Promise<
-      Truffle.TransactionResponse
-    >;
-    call(txDetails?: Truffle.TransactionDetails): Promise<void>;
-    sendTransaction(txDetails?: Truffle.TransactionDetails): Promise<string>;
-    estimateGas(txDetails?: Truffle.TransactionDetails): Promise<number>;
   };
 
   set: {
