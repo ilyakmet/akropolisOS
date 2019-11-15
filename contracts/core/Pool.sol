@@ -36,9 +36,9 @@ contract Pool is Base, CoreInterface {
         description = _description;
     }
 
-    function test() public {
+    // function test() public {
 
-    }
+    // }
     
     /**
      * @dev Set new module for given name

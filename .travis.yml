@@ -29,6 +29,7 @@ script:
   # yarn lint && yarn coverage && yarn test-gas
   # - npm run test-gas
   - npm run lint
+  - npm run test-gas
   - npm run test
   - npm run coverage
   - codecov
