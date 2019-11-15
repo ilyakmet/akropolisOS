@@ -13,7 +13,8 @@ before_install: # if "install" is overridden
 install:
 #  - yarn
 #  - yarn global add solhint
-#  - yarn global add codecov  
+#  - yarn global add codecov 
+  - npm i 
   - npm i -g solhint
   - npm i -g codecov
  
@@ -22,12 +23,13 @@ install:
   # slack: akropolisio:q9lFKpyTHVdsNQ8JD3sA6VQP
 
 node_js:
-  - '10.15.3'
+  - 12
 
 script: 
-    # yarn lint && yarn coverage && yarn test-gas
-  - npm run lint
+  # yarn lint && yarn coverage && yarn test-gas
   # - npm run test-gas
+  - npm run lint
+  - npm run test
   - npm run coverage
   - codecov
 
