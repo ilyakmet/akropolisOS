@@ -14,7 +14,8 @@ install:
 #  - yarn
 #  - yarn global add solhint
 #  - yarn global add codecov 
- - npm i -g solhint codecov
+  - npm i
+  - npm i -g solhint codecov
  
 # notifications:
   # email: true
